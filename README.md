@@ -37,19 +37,99 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+![WhatsApp Image 2024-12-08 at 4 43 21 PM (2)](https://github.com/user-attachments/assets/46838152-f4b2-4550-b421-b179368ced41)
+
+![WhatsApp Image 2024-12-08 at 4 43 21 PM (3)](https://github.com/user-attachments/assets/f337560d-0ed4-4585-bc12-b3c426c23f3b)
 
 **Procedure**
 
-Write the detailed procedure here
+ 1.Type the program in quartus software
+ 
+ 2.Compile and run the program
+ 
+ 3.Generate the RTL schematic and save the logic diagram
+ 
+ 4.Create nodes for inputs and outputs to generate the things diagram
+ 
+ 5.For different input combinations generate the timing diagraM
+
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
+
+Developed by: supriya S J 
+
+RegisterNumber:24001109
 */
+//full adder
+
+module ex04(sum, cout, a, b, cin);
+
+output sum;
+
+output cout;
+
+input a;
+
+input b;
+
+input cin;
+
+//internal nets
+
+wire sl,cl,c2;
+
+//Instantiate logic gate primitives xor (sl,a,b);
+
+and(cl,a,b);
+
+xor (sum, sl, cin);
+
+and(c2, sl, cin);
+
+or(cout, c2,cl);
+
+endmodule
+
+Full subractor
+
+module ex04a (df, bo, a, b, bin);
+
+output df;
+
+output bo;
+
+input a;
+
+input b;
+
+input bin;
+
+wire w1,w2, w3;
+
+assign w1=a^b;
+
+assign w2=(~a&b);
+
+assign w3=(-w1&bin);
+
+assign df-w1^bin;
+
+assign bo-w2/w3;
+
+endmodule
 
 **RTL Schematic**
+![WhatsApp Image 2024-12-08 at 8 50 09 PM (1)](https://github.com/user-attachments/assets/c4ad8f86-f75a-4167-8fdc-ab1af2999b4d)
+
+![WhatsApp Image 2024-12-16 at 7 36 36 PM](https://github.com/user-attachments/assets/42ca6dd6-8e9a-4050-82e8-3121f030697c)
 
 **Output Timing Waveform**
+
+![WhatsApp Image 2024-12-08 at 8 51 58 PM (1)](https://github.com/user-attachments/assets/9b1bcdf0-e8e0-4fe7-b451-4705ff54dbaa)
+
+![WhatsApp Image 2024-12-08 at 8 54 31 PM (1)](https://github.com/user-attachments/assets/91d64982-fa69-4ae9-8cff-1e68c8e3e23d)
 
 **Result:**
 
