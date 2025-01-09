@@ -62,6 +62,7 @@ Developed by: supriya S J
 
 RegisterNumber:24001109
 */
+
 //full adder
 
 module ex04(sum, cout, a, b, cin);
